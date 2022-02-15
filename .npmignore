@@ -1,7 +1,6 @@
-*.njsproj
 .vscode/
 .idea/
 !*.d.ts
-bitbucket-pipelines.yml
 .gitignore
-test
+.github/
+.npmignore

@@ -4,7 +4,7 @@ A lint configuration loosely based on Google.
 # Installation
 
 ```shell
-npm install @gregros/eslint-config --save-dev
+yarn add @gregros/eslint-config --dev
 
 # optionally, install peer deps and copy some boilerplate
 gregros-eslint-config-init

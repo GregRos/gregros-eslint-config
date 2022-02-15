@@ -68,9 +68,7 @@ module.exports = {
     extends: [
         "./internal/google-eslint-config.js"
     ],
-    // Warn - used for things that might be bugs, but you can use anyway with a comment
-    // Error - used for style things that have no use. You'll never need to do these. Probably.
-    // "Warn" isn't actually optional. Most executions will happen with warnings-as-errors.
+
     rules: {
         // OVERRIDES
         // x == null is allowed because it is predictable.
