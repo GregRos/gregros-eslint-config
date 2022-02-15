@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const cwd = process.cwd();
 const {join} = require("path")
-const {cp, echo, exec, set} = require("shelljs");
-set("-ex")
+const {cp, echo, exec, set, config} = require("shelljs");
+config.globOptions.dot = true;
 echo("Installing peer dependencies...");
 const cmd = process.argv0 === "npm" ? "npm install --save-dev" : "yarn add --dev";
 
@@ -21,4 +21,4 @@ for (const [k, v] of deps) {
 }
 echo("Copying files to cwd...")
 const filesDir = join(__dirname, "base", "*");
-cp("-n", filesDir, `${cwd}/`)
+cp("-n", filesDir, `${cwd}`)
