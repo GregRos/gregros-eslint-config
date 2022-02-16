@@ -1,45 +1,5 @@
-const namingConvention = [{
-    // Most things should be camelCase or strictCamelCase.
-    selector: "default",
-    format: ["camelCase"],
-    leadingUnderscore: "forbid",
-    trailingUnderscore: "forbid"
-}, {
-    selector:"typeLike",
-    format: ["PascalCase"],
-    leadingUnderscore: "forbid",
-    trailingUnderscore: "forbid"
-}, {
-    // Only CONST variables can be UPPER_CASE
-    selector: "variable",
-    modifiers: ["const"],
-    format: ["camelCase", "UPPER_CASE"],
-    // Leading underscore needs to be allowed in variables for destructing
-    // etc.
-    leadingUnderscore: "allow"
-}, {
-    // _is required for private members
-    selector: "memberLike",
-    format: ["camelCase"],
-    modifiers: ["private"],
-    leadingUnderscore: "require"
-}, {
-    // Meaningless variable names that are sometimes used.
-    // They aren't even short.
-    selector: "variable",
-    format: ["camelCase"],
-    custom: {
-        // Not allowed:
-        // * 'tmp' or 'temp' - temporary what?
-        // * sth, something, some, thing, etc. - totally meaningless. if you want a meanigless variable, just use a letter.
-        // * asd, adf, abc, xyz - meaningless names made by pressing random keys.
-        // Note that you CAN have single-letter variable names.
-        regex: "(tmps?|temps?|sths?|somethings?|somethigns?|some|things?|whatevers?|asd|adf|abc|xyz|hi)$",
-        match: false
-    }
-}]
-
 const bannedTypes = {
+    extendDefaults: false,
     types: {
         String: {
             message: "Use `string` instead",
@@ -66,7 +26,7 @@ const bannedTypes = {
 
 module.exports = {
     extends: [
-        "./internal/google-eslint-config.js"
+        "./base.js"
     ],
 
     rules: {
@@ -76,11 +36,14 @@ module.exports = {
 
         quotes: "off",
 
+        "no-undef": "off",
+
         "no-case-declarations": "off",
 
         // CUSTOM
 
         "array-callback-return": "warn",
+
 
         "no-self-compare": "warn",
 
@@ -140,7 +103,7 @@ module.exports = {
                 "node/no-unsupported-features/es-syntax": "off",
                 "node/no-missing-require": "off",
                 "node/shebang": "off",
-
+                "no-redeclare": "off",
                 // TS VERSIONS OF ESLINT RULES
 
                 "default-param-last": "off",
@@ -169,8 +132,6 @@ module.exports = {
 
                 "no-useless-constructor": "off",
                 "@typescript-eslint/no-useless-constructor": "error",
-
-                "@typescript-eslint/naming-convention": ["warn", ...namingConvention],
 
                 "@typescript-eslint/adjacent-overload-signatures": "error",
 
@@ -221,7 +182,7 @@ module.exports = {
                 "@typescript-eslint/promise-function-async": "warn"
             },
             "parserOptions": {
-                "ecmaVersion": 2018,
+                "ecmaVersion": 2020,
                 "sourceType": "module"
             }
         }

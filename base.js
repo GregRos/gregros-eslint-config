@@ -1,11 +1,9 @@
 module.exports = {
     "extends": [
         "eslint:recommended",
-        "plugin:node/recommended",
         "prettier"
     ],
     "plugins": [
-        "node"
     ],
     "rules": {
         // These are from https://github.com/google/gts/blob/main/.eslintrc.json
