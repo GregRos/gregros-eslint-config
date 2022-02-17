@@ -1,6 +1,6 @@
 {
   "name": "@gregros/eslint-config",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A linter configuration loosely based on Google.",
   "main": "index.js",
   "dependencies": {
