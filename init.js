@@ -1,25 +1,35 @@
 #!/usr/bin/env node
 const cwd = process.cwd();
-const {join} = require("path")
-const {cp, echo, exec, set, config} = require("shelljs");
+const { join } = require("path");
+const { cp, echo, exec, config, test, set } = require("shelljs");
 config.globOptions.dot = true;
-echo("Installing peer dependencies...");
-const cmdAdd = process.argv0 === "npm" ? "npm install --save-dev" : "yarn add --dev";
-const cmdCheck = process.argv0 === "npm" ? "npm list" : "yarn info"
-const packageJson = require("./package.json");
-const peers = packageJson.peerDependencies;
-const deps = Object.entries(peers)
-
-for (const [k, v] of deps) {
-    const result = exec(`${cmdCheck} ${k}`);
-    // If the command succeeded, skip to the next one.
-    if (result.code === 0) {
-        echo(`* Peer dependency ${k} exists.`)
-        continue;
+set("-e");
+const yarn = {
+    name: "yarn",
+    install(...what) {
+        return exec(`yarn add --dev ${what.join(" ")}`).code === 0;
     }
-    echo(`* Installing peer dependency ${k}...`)
-    exec(`${cmdAdd} ${k}@${v}`)
-}
-echo("Copying files to cwd...")
+};
+
+const npm = {
+    name: "npm",
+    install(...what) {
+        return exec(`npm install --save-dev ${what.join(" ")}`).code === 0;
+    }
+};
+
+const pkg = test("-f", "yarn.lock") ? yarn : npm;
+echo(`Installing peer dependencies. Using ${pkg.name}.`);
+const myPackageJson = require("./package.json");
+const peers = myPackageJson.peerDependencies || {};
+const packages = Object.entries(peers).map(([k, v]) => `${k}@${v}`);
+console.log(`
+Will be installed:
+${packages.map(x => `* ${x}`).join("\n")}
+`.trim());
+pkg.install(...packages);
+
+echo("Copying files to CWD (no overwrite)...");
 const filesDir = join(__dirname, "base", "*");
-cp("-n", filesDir, `${cwd}`)
+cp("-n", filesDir, `${cwd}`);
+echo("Done!");
