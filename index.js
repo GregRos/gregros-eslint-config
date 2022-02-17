@@ -57,8 +57,6 @@ module.exports = {
 
         "max-params": ["warn", 4],
 
-        "no-implied-eval": "error",
-
         "no-iterator": "error",
 
         "no-new": "warn",
@@ -116,9 +114,6 @@ module.exports = {
 
                 "no-duplicate-imports": "off",
                 "@typescript-eslint/no-duplicate-imports": "error",
-
-                "no-implied-eval": "off",
-                "@typescript-eslint/no-implied-eval": "error",
 
                 "no-loss-of-precision": "off",
                 "@typescript-eslint/no-loss-of-precision": "error",
