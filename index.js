@@ -45,8 +45,7 @@ module.exports = {
         // CUSTOM
 
         "array-callback-return": "warn",
-
-
+        
         "no-self-compare": "warn",
 
         "dot-notation": "error",
@@ -84,6 +83,11 @@ module.exports = {
         "prefer-numeric-literals": "error",
 
         "symbol-description": "error",
+
+        "parserOptions": {
+            "ecmaVersion": 2015,
+            "sourceType": "script"
+        }
     },
     "overrides": [
         {
