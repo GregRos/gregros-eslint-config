@@ -40,6 +40,8 @@ module.exports = {
 
         "no-case-declarations": "off",
 
+        // Style - use prettier
+        "no-trailing-spaces": "off",
         // CUSTOM
 
         "array-callback-return": "warn",
