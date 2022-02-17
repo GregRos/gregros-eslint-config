@@ -45,7 +45,7 @@ module.exports = {
         // CUSTOM
 
         "array-callback-return": "warn",
-        
+
         "no-self-compare": "warn",
 
         "dot-notation": "error",
