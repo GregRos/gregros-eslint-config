@@ -1,5 +1,6 @@
 const bannedTypes = {
     extendDefaults: false,
+
     types: {
         String: {
             message: "Use `string` instead",
@@ -28,7 +29,10 @@ module.exports = {
     extends: [
         "./base.js"
     ],
-
+    parserOptions: {
+        ecmaVersion: 2015,
+        sourceType: "script"
+    },
     rules: {
         // OVERRIDES
         // x == null is allowed because it is predictable.
@@ -83,11 +87,6 @@ module.exports = {
         "prefer-numeric-literals": "error",
 
         "symbol-description": "error",
-
-        "parserOptions": {
-            "ecmaVersion": 2015,
-            "sourceType": "script"
-        }
     },
     "overrides": [
         {
@@ -182,9 +181,9 @@ module.exports = {
 
                 "@typescript-eslint/promise-function-async": "warn"
             },
-            "parserOptions": {
-                "ecmaVersion": 2020,
-                "sourceType": "module"
+            parserOptions: {
+                ecmaVersion: 2020,
+                sourceType: "module"
             }
         }
 
