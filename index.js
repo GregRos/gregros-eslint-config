@@ -44,6 +44,7 @@ module.exports = {
 
         "no-case-declarations": "off",
 
+        "no-unused-vars": ["warn", {args: "none", vars: "local"}],
         // Style - use prettier
         "no-trailing-spaces": "off",
         // CUSTOM
@@ -128,7 +129,7 @@ module.exports = {
                 "@typescript-eslint/no-unused-expressions": "error",
 
                 "no-unused-vars": "off",
-                "@typescript-eslint/no-unused-vars": ["warn", {args: "none"}],
+                "@typescript-eslint/no-unused-vars": ["warn", {args: "none", vars: "local"}],
 
                 "no-useless-constructor": "off",
                 "@typescript-eslint/no-useless-constructor": "error",
