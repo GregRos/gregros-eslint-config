@@ -117,7 +117,6 @@ module.exports = {
                 "@typescript-eslint/no-dupe-class-members": "error",
 
                 "no-duplicate-imports": "off",
-                "@typescript-eslint/no-duplicate-imports": "error",
 
                 "no-loss-of-precision": "off",
                 "@typescript-eslint/no-loss-of-precision": "error",

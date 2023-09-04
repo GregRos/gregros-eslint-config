@@ -1,23 +1,23 @@
 {
   "name": "@gregros/eslint-config",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A linter configuration loosely based on Google.",
   "main": "index.js",
   "dependencies": {
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^9.0.0",
     "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "@types/node": "^17.0.13",
     "@types/shelljs": "^0.8.11",
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1"
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
-    "eslint": "^8.8.0",
-    "prettier": "^2.5.1"
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3"
   },
   "author": "gregros",
   "license": "MIT",
