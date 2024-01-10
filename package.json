@@ -1,6 +1,6 @@
 {
   "name": "@gregros/eslint-config",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A linter configuration loosely based on Google.",
   "main": "index.js",
   "dependencies": {
@@ -17,7 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "eslint": "^8.48.0",
-    "prettier": "^3.0.3"
+    "prettier": ">=2.8.8"
   },
   "author": "gregros",
   "license": "MIT",
