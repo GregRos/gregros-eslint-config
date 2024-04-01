@@ -1,42 +1,17 @@
-const bannedTypes = {
-    extendDefaults: false,
-
-    types: {
-        String: {
-            message: "Use `string` instead",
-            fixWith: "string"
-        },
-        Number: {
-            message: "Use `number` instead.",
-            fixWith: "number"
-        },
-        "{}": {
-            message: "Use `object` instead",
-            fixWith: "object"
-        },
-        Symbol: {
-            message: "Use `symbol` instead.",
-            fixWith: "symbol"
-        },
-        Boolean: {
-            message: "Use `boolean` instead.",
-            fixWith: "boolean"
-        }
-    }
-}
-
 module.exports = {
-    extends: [
-        "./base.js"
-    ],
+    extends: ["./base.js"],
     parserOptions: {
-        ecmaVersion: 2015,
+        ecmaVersion: 2020,
         sourceType: "script"
+    },
+    env: {
+        node: true,
+        es6: true
     },
     rules: {
         // OVERRIDES
         // x == null is allowed because it is predictable.
-        eqeqeq: ["error", "always", {"null": "ignore"}],
+        eqeqeq: ["error", "always", { null: "ignore" }],
 
         quotes: "off",
 
@@ -44,7 +19,7 @@ module.exports = {
 
         "no-case-declarations": "off",
 
-        "no-unused-vars": ["warn", {args: "none", vars: "local"}],
+        "no-unused-vars": ["warn", { args: "none", vars: "local" }],
         // Style - use prettier
         "no-trailing-spaces": "off",
         // CUSTOM
@@ -81,26 +56,22 @@ module.exports = {
 
         "no-useless-rename": "error",
 
-        "no-var": "warn",
+        "no-var": "off",
 
-        "no-void": "warn",
+        "no-void": "off",
 
         "prefer-numeric-literals": "error",
 
-        "symbol-description": "error",
+        "symbol-description": "error"
     },
-    "overrides": [
+    overrides: [
         {
-            "files": ["**/*.ts", "**/*.tsx"],
-            "parser": "@typescript-eslint/parser",
+            files: ["**/*.ts", "**/*.tsx"],
+            parser: "@typescript-eslint/parser",
 
-            "plugins": [
-                "@typescript-eslint"
-            ],
-            "extends": [
-
-            ],
-            "rules": {
+            plugins: ["@typescript-eslint"],
+            extends: [],
+            rules: {
                 // BROKEN
                 "node/no-missing-import": "off",
                 "node/no-empty-function": "off",
@@ -128,7 +99,7 @@ module.exports = {
                 "@typescript-eslint/no-unused-expressions": "error",
 
                 "no-unused-vars": "off",
-                "@typescript-eslint/no-unused-vars": ["warn", {args: "none", vars: "local"}],
+                "@typescript-eslint/no-unused-vars": ["warn", { args: "none", vars: "local" }],
 
                 "no-useless-constructor": "off",
                 "@typescript-eslint/no-useless-constructor": "error",
@@ -138,8 +109,6 @@ module.exports = {
                 "@typescript-eslint/await-thenable": "error",
 
                 "@typescript-eslint/ban-ts-comment": "error",
-
-                "@typescript-eslint/ban-types": ["error", bannedTypes],
 
                 "@typescript-eslint/no-extra-non-null-assertion": "error",
 
@@ -161,13 +130,19 @@ module.exports = {
 
                 // NON :RECOMMENDED
 
-                "@typescript-eslint/array-type": ["error", {
-                    default: "array"
-                }],
+                "@typescript-eslint/array-type": [
+                    "error",
+                    {
+                        default: "array"
+                    }
+                ],
 
-                "@typescript-eslint/consistent-type-assertions": ["error", {
-                    assertionStyle: "as"
-                }],
+                "@typescript-eslint/consistent-type-assertions": [
+                    "error",
+                    {
+                        assertionStyle: "as"
+                    }
+                ],
 
                 "@typescript-eslint/no-confusing-non-null-assertion": "error",
 
@@ -186,6 +161,5 @@ module.exports = {
                 sourceType: "module"
             }
         }
-
     ]
 }

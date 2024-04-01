@@ -1,28 +1,28 @@
 {
   "name": "@gregros/eslint-config",
-  "version": "0.5.0",
-  "description": "A linter configuration loosely based on Google.",
+  "version": "0.6.0",
+  "description": "An eslint configuration.",
   "main": "index.js",
   "dependencies": {
-    "eslint-config-prettier": "^9.0.0",
-    "shelljs": "^0.8.5"
+    "eslint-config-prettier": "^9.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.13",
     "@types/shelljs": "^0.8.11",
-    "@typescript-eslint/eslint-plugin": "7.2.0",
-    "@typescript-eslint/parser": "7.2.0"
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-packagejson": "^2.4.14"
   },
   "autoInstall": {
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5"
   },
   "author": "gregros",
   "license": "MIT",
   "repository": "https://github.com/GregRos/gregros-eslint-config.git",
-  "bin": {
-    "gregros-eslint-config-init": "init.js"
-  }
+  "packageManager": "yarn@4.1.1"
 }
