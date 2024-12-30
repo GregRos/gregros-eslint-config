@@ -1,6 +1,6 @@
 {
   "name": "@gregros/eslint-config",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "An eslint configuration.",
   "main": "index.js",
   "dependencies": {
@@ -13,7 +13,8 @@
     "@typescript-eslint/parser": "^8.19.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "prettier-plugin-packagejson": "^2.4.14"
+    "prettier-plugin-packagejson": "^2.4.14",
+    "typescript": "^5.7.2"
   },
   "autoInstall": {
     "@typescript-eslint/eslint-plugin": "^8.19.0",
