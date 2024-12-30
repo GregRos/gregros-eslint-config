@@ -46,7 +46,6 @@ module.exports = {
 
         "no-sequences": "warn",
 
-        "no-throw-literal": "warn",
 
         "no-unneeded-ternary": "error",
 
@@ -91,9 +90,6 @@ module.exports = {
 
                 "no-loss-of-precision": "off",
                 "@typescript-eslint/no-loss-of-precision": "error",
-
-                "no-throw-literal": "off",
-                "@typescript-eslint/no-throw-literal": "error",
 
                 "no-unused-expressions": "off",
                 "@typescript-eslint/no-unused-expressions": "error",

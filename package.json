@@ -1,6 +1,6 @@
 {
   "name": "@gregros/eslint-config",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "An eslint configuration.",
   "main": "index.js",
   "dependencies": {
@@ -9,20 +9,23 @@
   "devDependencies": {
     "@types/node": "^17.0.13",
     "@types/shelljs": "^0.8.11",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "prettier-plugin-packagejson": "^2.4.14"
   },
   "autoInstall": {
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5"
   },
   "author": "gregros",
   "license": "MIT",
   "repository": "https://github.com/GregRos/gregros-eslint-config.git",
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.6.0",
+  "peerDependencies": {
+    "typescript": "*"
+  }
 }
