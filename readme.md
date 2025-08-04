@@ -12,3 +12,4 @@ yarn add @gregros/eslint-config --dev
 1. ESLint, ESTS
 2. Prettier
 
+```

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "ES2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "skipDefaultLibCheck": true
+  },
+  "include": ["index.js"],
+  "exclude": ["node_modules"]
+}
